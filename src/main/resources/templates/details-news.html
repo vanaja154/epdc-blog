@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPDC</title>
+  <link rel="icon" type="image/png" th:href="@{/images/globe-removebg-preview.png}" />
+  <link rel="stylesheet" th:href="@{/style.css}">
+  <link rel="stylesheet" href="phone.css">
+  <style>
+
+    /* Header Styling */
+    body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: #9acd32;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0 26px;
+  font-size: 3rem; 
+}
+
+.social-links {
+  margin-right: 75px;
+}
+
+.social-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #f7eded; 
+  color: #9acd32; 
+  text-align: center;
+  line-height: 40px; 
+  margin-left: 10px;
+  border-radius: 50%; 
+  text-decoration: none; 
+}
+
+/* Footer Styling */
+footer {
+  height: 100px;
+  width: 100%;
+  background-color: #868181; 
+}
+
+.footer-bottom {
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  text-align: center;
+  color: white; 
+}
+
+.footer-bottom a {
+  color: rgb(250, 170, 20); 
+  text-decoration: none; 
+}
+    /* Detail Container Styling */
+    .detail-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .detail-container h2 {
+      font-size: 26px;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    .main-image {
+      width: 100%;
+      max-height: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .detail-container p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+      text-align: justify;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 768px) {
+      .header h1 {
+      font-size: 2rem;
+    }
+      .social-links {
+      margin-right: 10px;
+      }
+      .social-icon {
+      width: 21px;
+      height: 36px;
+    }
+
+    }
+
+   
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="heading">
+      <h1>దక్షిణాది</h1>
+    </div>
+    <div class="social-links">
+      <a href="https://www.facebook.com/share/167tSVQ9yY/?mibextid=wwXIfr" class="social-icon"
+        ><i class="fa-brands fa-facebook"></i
+      ></a>
+      <a href="https://x.com/epdc225709?s=11" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://www.instagram.com/environment_council/profilecard" class="social-icon"
+        ><i class="fa-brands fa-instagram"></i
+      ></a>
+      <a href="https://youtube.com/@environmentcouncil?si=2DBOX_u-20v-hitC" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+      <a
+        href="https://whatsapp.com/channel/0029VaXQPYMIN9irM65HUp0y"
+        class="social-icon"
+        ><i class="fa-brands fa-whatsapp"></i
+      ></a>
+    </div>
+  </div>
+
+  <!-- Detail Container -->
+  <div class="detail-container">
+    <h2 th:text="${title != null ? title : 'No Title Available'}"></h2>
+    <img class="main-image" th:src="@{${mainImage != null ? mainImage : '/images/default.jpg'}}" alt="Image">
+    <p th:text="${mainText != null ? mainText : 'No description available.'}"></p>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <p>Copyright © EPDC @ 2025. All rights reserved.</p>
+      <p class="company">
+        Powered By <a target="_blank" href="https://nuhvin.com/">Nuhvin</a>
+      </p>
+    </div>
+  </footer>
+  <script src="https://kit.fontawesome.com/109a493327.js" crossorigin="anonymous"></script>
+</body>
+</html>
